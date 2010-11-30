@@ -17,9 +17,13 @@ public class PatronDeVue {
 		this.nomPatron = nomPatron;
 	}
 
-	public Representation representation() {
+	public Representation représentation() {
+		return représentation(MediaType.TEXT_HTML);
+	}
+
+	private Representation représentation(MediaType typeMédia) {
 		return new TemplateRepresentation(nomPatron,
-				getFreemarkerConfiguration(), données, MediaType.TEXT_HTML);
+				getFreemarkerConfiguration(), données, typeMédia);
 	}
 
 	private Configuration getFreemarkerConfiguration() {
