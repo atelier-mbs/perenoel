@@ -1,0 +1,25 @@
+<assembly>
+
+ <id>ipp_web</id>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+<includeBaseDirectory>false</includeBaseDirectory>
+
+<files>
+    <file>
+      <source>target/${pom.artifactId}-${pom.version}.${project.packaging}</source>
+      <outputDirectory>binpackage</outputDirectory>
+      <destName>${pom.artifactId}.${project.packaging}</destName>
+</file>
+</files>
+
+<fileSets>
+    <fileSet>
+      <directory>src/main/config</directory>
+      <excludes><exclude>dev/*</exclude></excludes>
+      <outputDirectory>conf</outputDirectory>     
+  </fileSet>
+</fileSets>
+
+</assembly>

@@ -1,0 +1,5 @@
+<Context path="" reloadable="true">
+
+	<Parameter name="log4j.properties" value="/usr2/webapps/perenoel/log4j.properties"
+		override="true" />
+</Context>

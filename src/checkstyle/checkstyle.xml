@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+<!--
+    Configuration Checkstyle pour verifier la conformite a la convention de codage MBS.
+    Version: 2009-09-16 pour Checkstyle 5
+-->
+<module name="Checker">
+
+    <module name="FileLength">
+        <property name="max" value="2000"/>
+    </module>
+<!-- Checks for whitespace                               -->
+        <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="FileTabCharacter"/>
+
+
+    <module name="TreeWalker">
+
+<!-- Checks for Javadoc comments.                     -->
+        <!-- See http://checkstyle.sf.net/config_javadoc.html -->
+        <module name="JavadocMethod">
+            <property name="scope" value="protected"/>
+            <property name="allowUndeclaredRTE" value="true"/>
+            <property name="allowMissingThrowsTags" value="true"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+        </module>
+        <module name="JavadocType"/>
+        <module name="JavadocVariable">
+            <property name="scope" value="protected"/>
+        </module>
+        <module name="JavadocStyle">
+            <property name="checkFirstSentence" value="false"/>
+        </module>
+
+<!-- Checks for Naming Conventions.                  -->
+        <!-- See http://checkstyle.sf.net/config_naming.html -->
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+        </module>
+        <module name="LocalFinalVariableName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+            <property name="tokens" value="INTERFACE_DEF"/>
+            <property name="severity" value="info"/>
+        </module>
+
+<!-- Checks for imports                              -->
+        <!-- See http://checkstyle.sf.net/config_import.html -->
+        <module name="AvoidStarImport">
+            <property name="excludes" value="java.io,java.net"/>
+            <property name="severity" value="info"/>
+        </module>
+        <module name="RedundantImport">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="UnusedImports">
+            <property name="severity" value="info"/>
+        </module>
+
+<!-- Checks for Size Violations.                    -->
+        <!-- See http://checkstyle.sf.net/config_sizes.html -->
+        <module name="LineLength" >
+            <property name="severity" value="warning"/>
+            <property name="max" value="120"/>
+        </module>
+        <module name="MethodLength">
+            <property name="severity" value="warning"/>
+            <property name="max" value="80"/>
+        </module>
+        <module name="ParameterNumber"/>
+
+<!-- Modifier Checks                                    -->
+        <!-- See http://checkstyle.sf.net/config_modifiers.html -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+<!-- Checks for blocks. You know, those {}'s         -->
+        <!-- See http://checkstyle.sf.net/config_blocks.html -->
+        <module name="AvoidNestedBlocks">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="EmptyBlock">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="NeedBraces"/>
+
+<!-- Checks for braces placement -->
+        <module name="LeftCurly"/>
+        <module name="RightCurly"/>
+
+<!-- Checks for common coding problems               -->
+        <!-- See http://checkstyle.sf.net/config_coding.html -->
+        <module name="EmptyStatement">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="InnerAssignment">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="MissingSwitchDefault"/>
+        <module name="SimplifyBooleanExpression">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="SimplifyBooleanReturn">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="PackageDeclaration"/>
+        <module name="DeclarationOrder">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="DefaultComesLast"/>
+        <module name="FallThrough">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="MissingCtor">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="UnnecessaryParentheses">
+            <property name="severity" value="ignore"/>
+        </module>
+
+        <!-- Checks for class design                         -->
+        <!-- See http://checkstyle.sf.net/config_design.html -->
+        <module name="FinalClass">
+            <property name="severity" value="info"/>
+        </module>
+        <module name="HideUtilityClassConstructor">
+            <property name="severity" value="info"/>
+        </module>
+
+        <!-- Checks for metrics -->
+        <module name="CyclomaticComplexity">
+            <property name="max" value="7"/>
+            <property name="severity" value="info"/>
+        </module>
+        <module name="BooleanExpressionComplexity">
+            <property name="max" value="5"/>
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="NestedIfDepth">
+            <property name="max" value="3"/>
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="NestedTryDepth">
+            <property name="max" value="3"/>
+            <property name="severity" value="ignore"/>
+        </module>
+
+        <module name="JavaNCSS">
+            <property name="severity" value="info"/>
+        </module>
+    </module>
+
+    <!-- Checks for Duplicate Code -->
+    <module name="StrictDuplicateCode">
+        <property name="severity" value="ignore"/>
+    </module>
+
+</module>
+
