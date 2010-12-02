@@ -1,0 +1,1 @@
+<html><ul><#list cadeaux as cadeau><li>${cadeau.nom}</li></#list></ul></html>
